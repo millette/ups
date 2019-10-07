@@ -11,7 +11,7 @@ fastify.get('/', function (request, reply) {
 })
 
 fastify.post('/', function (request, reply) {
-  reply.send({ hello: 'world' })
+  reply.send({ hello: 'world', cnt: request.body.cnt })
 })
 
 // Run the server!
