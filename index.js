@@ -27,8 +27,6 @@ fastify.put('/', async (request) => {
   return { url: fn.replace(UPLOAD_ROOT_FS, UPLOAD_ROOT_URL), size: cnt.length }
 })
 
-// ${UPLOAD_ROOT_FS}
-
 // Run the server!
 fastify.listen(UPLOAD_PORT || 4000, UPLOAD_HOST || 'localhost', (err, address) => {
   if (err) {
