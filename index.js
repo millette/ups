@@ -24,7 +24,7 @@ fastify.put('/', async (request) => {
   const dir = await mkdtemp(UPLOAD_ROOT_FS)
   const fn = `${dir}/file.svg`
   await writeFile(fn, cnt)
-  return { url: `${fn}`, size: cnt.length }
+  return { url: fn.replace(UPLOAD_ROOT_FS, UPLOAD_ROOT_URL), size: cnt.length }
 })
 
 // ${UPLOAD_ROOT_FS}
