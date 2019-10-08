@@ -6,7 +6,7 @@ const fastify = require('fastify')({ logger: true })
 // core
 const { createReadStream, promises: { mkdtemp, writeFile } } = require('fs')
 
-const { UPLOAD_PORT, UPLOAD_ROOT_FS, UPLOAD_ROOT_URL } = process.env
+const { UPLOAD_PORT, UPLOAD_HOST, UPLOAD_ROOT_FS, UPLOAD_ROOT_URL } = process.env
 
 // This is where svg files are downloaded from.
 fastify.get(`${UPLOAD_ROOT_URL}:id/file.svg`, (request, reply) => {
