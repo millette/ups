@@ -24,8 +24,10 @@ fastify.put('/', async (request) => {
   const dir = await mkdtemp(UPLOAD_ROOT_FS)
   const fn = `${dir}/file.svg`
   await writeFile(fn, cnt)
-  return { url: `${UPLOAD_ROOT_FS}${fn}`, size: cnt.length }
+  return { url: `${fn}`, size: cnt.length }
 })
+
+// ${UPLOAD_ROOT_FS}
 
 // Run the server!
 fastify.listen(UPLOAD_PORT || 4000, UPLOAD_HOST || 'localhost', (err, address) => {
